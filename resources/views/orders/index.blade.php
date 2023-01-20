@@ -43,7 +43,8 @@
             <tbody>
                 @foreach ($orders as $order)
                 <tr>
-                    <td>{{$order->id}}</td>
+                    <td>
+                        <a href="{{ route('orders.show', $order) }}" class="btn btn-primary">{{$order->id}}</a></td>
                     <td>{{$order->getCustomerName()}}</td>
                     <td>{{ config('settings.currency_symbol') }} {{$order->formattedTotal()}}</td>
                     <td>{{ config('settings.currency_symbol') }} {{$order->discount}}</td>

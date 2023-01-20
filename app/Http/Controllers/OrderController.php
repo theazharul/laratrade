@@ -60,4 +60,10 @@ class OrderController extends Controller
         ]);
         return 'success';
     }
+
+
+    public function show(Order $order)
+    {
+        return view("orders.show")->with('order', $order);
+    }
 }
