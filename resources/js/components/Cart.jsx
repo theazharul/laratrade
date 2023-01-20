@@ -200,8 +200,9 @@ class Cart extends Component {
                         discount: this.state.discount
                     })
                     .then((res) => {
-                        this.loadCart();
                         this.setState({ "discount": 0 });
+                        this.loadCart();
+                        window.open('/admin/orders/' + res.data, '_blank')
                         return res.data;
                     })
                     .catch((err) => {
