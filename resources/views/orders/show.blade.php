@@ -9,7 +9,8 @@
 								<div class="invoice-title">
 									<div class="row">
 										<div class="col-xs-12">
-											<img src="http://vergo-kertas.herokuapp.com/assets/img/logo.png" alt="" height="35">
+											<img src="{{ asset('images/logo.png') }}" alt="" height="35">
+											<div>{{ config('app.name') }}</div>
 										</div>
 									</div>
 									<br>
@@ -45,7 +46,7 @@
 								</div>
 								<div class="row">
 									<div class="col-md-12">
-										<h3>ORDER SUMMARY</h3>
+										<div>ORDER SUMMARY</div>
 										<table class="table table-striped">
 											<thead>
 												<tr class="line">
