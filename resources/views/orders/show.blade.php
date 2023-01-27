@@ -64,8 +64,8 @@
 													<td>{{$index+1}}</td>
 													<td><strong>{{$item->product->name}}</strong></td>
 													<td class="text-center">{{$item->quantity}}</td>
-													<td class="text-center">{{$item->price}}৳</td>
-													<td class="text-right">{{$item->quantity * $item->price}}৳</td>
+													<td class="text-center">{{$item->product->selling_price}}৳</td>
+													<td class="text-right">{{$item->price}}৳</td>
 												</tr>
    @endforeach
 												<tr>
