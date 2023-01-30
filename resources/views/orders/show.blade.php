@@ -11,6 +11,7 @@
 										<div class="col-xs-12">
 											<img src="{{ asset('images/logo.png') }}" alt="" height="35">
 											<div>{{ config('app.name') }}</div>
+											<div>{{ config('app.description') }}</div>
 										</div>
 									</div>
 									<br>
