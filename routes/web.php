@@ -20,6 +20,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
     Route::post('/settings', [SettingController::class, 'store'])->name('settings.store');
     Route::resource('products', ProductController::class);
+    Route::get('products/generate-barcode', [ProductController::class, 'barcode'])->name('generate.barcode');
     Route::resource('customers', CustomerController::class);
     Route::resource('orders', OrderController::class);
 
