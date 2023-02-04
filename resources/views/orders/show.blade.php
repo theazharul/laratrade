@@ -48,11 +48,11 @@
 								<div class="row">
 									<div class="col-md-12">
 										<div>ORDER SUMMARY</div>
-										<table class="table table-striped">
+										<table class="table table-striped" width="1170px">
 											<thead>
 												<tr class="line">
 													<td><strong>#</strong></td>
-													<td class="text-center"><strong>Product Name</strong></td>
+													<td width="200" class="text-center"><strong>Product Name</strong></td>
 													<td class="text-center"><strong>Quantity</strong></td>
 													<td class="text-right"><strong>Price</strong></td>
 													<td class="text-right"><strong>Subtotal</strong></td>
@@ -66,8 +66,8 @@
 													<td>{{$index+1}}</td>
 													<td><strong>{{$item->product->name}}</strong></td>
 													<td class="text-center">{{$item->quantity}}</td>
-													<td class="text-center">{{$item->product->selling_price}}৳</td>
-													<td class="text-right">{{$item->price}}৳</td>
+													<td class="text-center">{{$item->product->selling_price}} {{ config('settings.currency_symbol') }}</td>
+													<td class="text-right">{{number_format($item->price,2)}} {{ config('settings.currency_symbol') }}</td>
 												</tr>
    @endforeach
 												<tr>
