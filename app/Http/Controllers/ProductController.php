@@ -34,6 +34,7 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function create()
     {
         return view('products.create');
@@ -52,7 +53,7 @@ class ProductController extends Controller
         if ($request->hasFile('image')) {
             $image_path = $request->file('image')->store('products', 'public');
         }
-
+        
         $product = Product::create([
             'name' => $request->name,
             'description' => $request->description,
@@ -78,8 +79,19 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        $productsBarcode= Product::select('barcode');
+	    return view('products.show',compact('productsBarcode','product'));
+        return view("products.show")->with('product', $product);
     }
+
+
+
+    public function barcode()
+	{ 
+        $products = Product::all();
+        $productsBarcode= Product::select('barcode');
+	    return view('products.barcode',compact('productsBarcode','products'));
+	}
 
     /**
      * Show the form for editing the specified resource.
@@ -144,3 +156,6 @@ class ProductController extends Controller
         ]);
     }
 }
+
+
+   

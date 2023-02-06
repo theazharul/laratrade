@@ -19,6 +19,6 @@ class Customer extends Model
 
     public function getAvatarUrl()
     {
-        return Storage::url($this->avatar);
+        return Storage::url('app/public/'.$this->avatar);
     }
 }
