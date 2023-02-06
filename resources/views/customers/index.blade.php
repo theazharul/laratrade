@@ -30,7 +30,7 @@
                     <tr>
                         <td>{{$customer->id}}</td>
                         <td>
-                            <img width="50" src="{{$customer->getAvatarUrl()}}" alt="">
+                            <img  src="{{route('home')}}{{$customer->getAvatarUrl()}}" alt="">
                         </td>
                         <td>{{$customer->first_name}}</td>
                         <td>{{$customer->last_name}}</td>
