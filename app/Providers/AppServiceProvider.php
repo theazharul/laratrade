@@ -41,6 +41,7 @@ class AppServiceProvider extends ServiceProvider
             ]);
 
             config(['app.name' => config('settings.app_name')]);
+            config(['app.description' => config('settings.app_description')]);
         }
 
         Paginator::useBootstrap();

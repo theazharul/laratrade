@@ -60,6 +60,7 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
 
 .invoice {
     padding: 30px;
+    border-style: dashed;
 }
 
 .invoice h2 {
@@ -73,7 +74,7 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
 
 .invoice hr {
     margin-top: 10px;
-    border-color: #ddd;
+    // border-color: #ddd;
 }
 
 .invoice .table tr.line {

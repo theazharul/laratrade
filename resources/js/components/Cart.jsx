@@ -309,7 +309,8 @@ class Cart extends Component {
                         <div className="col text-right">
 
                             <input
-                                type="text"
+                                type="number"
+                                min="0"
                                 name="discount"
                                 className="form-control form-control-sm qty text-right"
                                 value={this.state.discount}

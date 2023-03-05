@@ -1,15 +1,20 @@
 @extends('layouts.admin')
+@section('css')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+@endsection
 @section('content')
 <div class="container">
 <div class="row">
     				<!-- BEGIN INVOICE -->
-					<div class="col-xs-12">
+					<div class="col-xs-12 mx-auto">
 						<div class="grid invoice">
 							<div class="grid-body">
 								<div class="invoice-title">
 									<div class="row">
 										<div class="col-xs-12">
-											<img src="http://vergo-kertas.herokuapp.com/assets/img/logo.png" alt="" height="35">
+											<img src="{{ asset('images/logo.png') }}" alt="" height="35">
+											<h2>{{ config('app.name') }}</h2>
+											<div>{{ config('app.description') }}</div>
 										</div>
 									</div>
 									<br>
@@ -45,12 +50,12 @@
 								</div>
 								<div class="row">
 									<div class="col-md-12">
-										<h3>ORDER SUMMARY</h3>
+										<div>ORDER SUMMARY</div>
 										<table class="table table-striped">
 											<thead>
 												<tr class="line">
 													<td><strong>#</strong></td>
-													<td class="text-center"><strong>Product Name</strong></td>
+													<td width="200" class="text-center"><strong>Product Name</strong></td>
 													<td class="text-center"><strong>Quantity</strong></td>
 													<td class="text-right"><strong>Price</strong></td>
 													<td class="text-right"><strong>Subtotal</strong></td>
@@ -64,8 +69,8 @@
 													<td>{{$index+1}}</td>
 													<td><strong>{{$item->product->name}}</strong></td>
 													<td class="text-center">{{$item->quantity}}</td>
-													<td class="text-center">{{$item->price}}৳</td>
-													<td class="text-right">{{$item->quantity * $item->price}}৳</td>
+													<td class="text-center">{{$item->product->selling_price}} {{ config('settings.currency_symbol') }}</td>
+													<td class="text-right">{{number_format($item->price,2)}} {{ config('settings.currency_symbol') }}</td>
 												</tr>
    @endforeach
 												<tr>
@@ -86,9 +91,10 @@
 													<td class="text-right"><strong>{{$order->total() - $order->discount}}৳</strong></td>
 												</tr>
 											</tbody>
-										</table>
+										</table>										
 									</div>
 								</div>
+								<i class="fa-brands fa-facebook-f"></i><span>/neonwearbd</span>
 							</div>
 						</div>
 					</div>

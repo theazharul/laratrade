@@ -28,8 +28,9 @@ class ProductUpdateRequest extends FormRequest
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
             'image' => 'nullable|image',
-            'barcode' => 'required|string|max:50|unique:products,barcode,' . $product_id,
-            'price' => 'required|regex:/^\d+(\.\d{1,2})?$/',
+            'barcode' => 'required|string|max:50|unique:products,barcode,' . $product_id,            
+            'purchase_price' => 'required|regex:/^\d+(\.\d{1,2})?$/',
+            'selling_price' => 'required|regex:/^\d+(\.\d{1,2})?$/',
             'quantity' => 'required|integer',
             'status' => 'required|boolean',
         ];
