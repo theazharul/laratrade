@@ -4,9 +4,9 @@
 @endsection
 @section('content')
 <div class="container">
-<div class="row">
+<div class="row justify-content-center">
     				<!-- BEGIN INVOICE -->
-					<div class="col-xs-12 mx-auto">
+					<div class="col-xs-12">
 						<div class="grid invoice">
 							<div class="grid-body">
 								<div class="invoice-title">
@@ -76,19 +76,19 @@
 												<tr>
 													<td colspan="3">
 													</td><td class="text-right"><strong>Total</strong></td>
-													<td class="text-right"><strong>{{$order->total()}}৳</strong></td>
+													<td class="text-right"><strong>{{$order->total()}} {{ config('settings.currency_symbol') }}</strong></td>
 												</tr>
                                                 @if($order->discount != 0)
 												<tr>
 													<td colspan="3"></td>
 													<td class="text-right"><strong>Discount</strong></td>
-													<td class="text-right"><strong>{{$order->discount}}৳</strong></td>
+													<td class="text-right"><strong>{{$order->discount}} % </strong></td>
 												</tr>
                                                 @endif
 												<tr>
 													<td colspan="3"></td>
 													<td class="text-right"><strong>Grand Total</strong></td>
-													<td class="text-right"><strong>{{$order->total() - $order->discount}}৳</strong></td>
+													<td class="text-right"><strong>{{$order->total() - (($order->total() * $order->discount)/100)}} {{ config('settings.currency_symbol') }}</strong></td>
 												</tr>
 											</tbody>
 										</table>										

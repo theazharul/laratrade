@@ -87,7 +87,12 @@ class ProductController extends Controller
     {
         $productsBarcode= Product::select('barcode');
 	    return view('products.show',compact('productsBarcode','product'));
-        return view("products.show")->with('product', $product);
+        // return view("products.show")->with('product', $product);
+    }
+
+    public function stock(){
+        $products = Product::get();
+        return view("reports.stockreport")->with('products', $products);
     }
 
 

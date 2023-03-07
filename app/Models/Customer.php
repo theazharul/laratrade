@@ -12,6 +12,7 @@ class Customer extends Model
         'last_name',
         'email',
         'phone',
+        'discount',
         'address',
         'avatar',
         'user_id',

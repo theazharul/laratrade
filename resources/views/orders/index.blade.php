@@ -48,7 +48,7 @@
                         <a href="{{ route('orders.show', $order) }}" class="btn btn-primary">{{$order->id}}</a></td>
                     <td>{{$order->getCustomerName()}}</td>
                     <td>{{$order->formattedTotal()}}{{ config('settings.currency_symbol') }} </td>
-                    <td> {{$order->discount}} {{ config('settings.currency_symbol') }}</td>
+                    <td> {{$order->discount}} %</td>
                     <td> {{$order->formattedReceivedAmount()}} {{ config('settings.currency_symbol') }}</td>
                     <td>
                         @if($order->receivedAmount() == 0)
@@ -72,7 +72,9 @@
                     <th></th>
                     <th></th>
                     <th>{{ number_format($total, 2) }} {{ config('settings.currency_symbol') }} </th>
-                    <th> {{ number_format($totalDiscount, 2) }} {{ config('settings.currency_symbol') }}</th>
+                    <th> 
+                        <!-- {{ number_format($totalDiscount, 2) }} {{ config('settings.currency_symbol') }} -->
+                    </th>
                     <th> {{ number_format($receivedAmount, 2) }} {{ config('settings.currency_symbol') }}</th>
                     <th></th>
                     <th></th>

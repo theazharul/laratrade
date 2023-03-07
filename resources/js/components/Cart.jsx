@@ -23,7 +23,6 @@ class Cart extends Component {
         this.handleChangeQty = this.handleChangeQty.bind(this);
         this.handleOnChangeDiscount = this.handleOnChangeDiscount.bind(this);
         this.handleEmptyCart = this.handleEmptyCart.bind(this);
-
         this.loadProducts = this.loadProducts.bind(this);
         this.handleChangeSearch = this.handleChangeSearch.bind(this);
         this.handleSeach = this.handleSeach.bind(this);
@@ -188,7 +187,7 @@ class Cart extends Component {
         Swal.fire({
             title: "Received Amount",
             input: "text",
-            inputValue: this.getTotal(this.state.cart) - this.state.discount,
+            inputValue: this.getTotal(this.state.cart) - ((this.getTotal(this.state.cart) * this.state.discount)/100),
             showCancelButton: true,
             confirmButtonText: "Send",
             showLoaderOnConfirm: true,
@@ -301,7 +300,7 @@ class Cart extends Component {
                     <div className="row">
                         <div className="col">Total:</div>
                         <div className="col text-right">
-                            {window.APP.currency_symbol} {this.getTotal(cart)}
+                             {this.getTotal(cart)} {window.APP.currency_symbol}
                         </div>
                     </div>
                     <div className="row">
@@ -323,7 +322,7 @@ class Cart extends Component {
                     <div className="row">
                         <div className="col">Grand total:</div>
                         <div className="col text-right">
-                            {window.APP.currency_symbol} {this.getTotal(cart) - parseFloat(this.state.discount)}
+                             {this.getTotal(cart) - (this.getTotal(cart) * (parseFloat(this.state.discount)/100))} {window.APP.currency_symbol}
                         </div>
                     </div>
                     <div className="row">

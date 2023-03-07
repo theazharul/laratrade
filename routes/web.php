@@ -21,6 +21,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::post('/settings', [SettingController::class, 'store'])->name('settings.store');
     Route::resource('products', ProductController::class);
     Route::get('/barcode', [ProductController::class, 'barcode'])->name('generate.barcode');
+    Route::get('/stock', [ProductController::class, 'stock'])->name('products.stock');
     Route::resource('customers', CustomerController::class);
     Route::resource('orders', OrderController::class);
 
