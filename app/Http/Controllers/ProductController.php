@@ -92,6 +92,10 @@ class ProductController extends Controller
 
     public function stock(){
         $products = Product::get();
+        // $total = $products->map(function ($i) {
+        //     return $i->total();
+        // })->sum();
+        // dd($total);
         return view("reports.stockreport")->with('products', $products);
     }
 

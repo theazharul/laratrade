@@ -13,9 +13,10 @@
 <link rel="stylesheet" href="{{ asset('plugins/sweetalert2/sweetalert2.min.css') }}">
 @endsection
 @section('content')
+<div class='row justify-content-center'>
 <div class="card product-list">
     <div class="card-body">
-        <table class="table">
+        <table class="table table-sm">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -32,7 +33,7 @@
                 <tr>
                     <td>{{$product->id}}</td>
                     <td>{{$product->name}}</td>
-                   <td><a href="{{ route('products.show', $product) }}">{{$product->barcode}}</a></td>
+                    <td>{{$product->barcode}}</td>
                     <td>{{$product->purchase_price}}</td>
                     <td>{{$product->quantity}}</td>
                     <td>
@@ -41,9 +42,19 @@
                     </td>
                     <td>{{$product->purchase_price * $product->quantity}}</td>
                 </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
+</div>
 </div>
 @endsection
