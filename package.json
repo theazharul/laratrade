@@ -27,7 +27,7 @@
         "admin-lte": "^3.2.0",
         "bootstrap-colorpicker": "^3.4.0",
         "dateformat": "^5.0.3",
-        "sweetalert2": "^11.7.3",
+        "sweetalert2": "^11.4.8",
         "tempusdominus-bootstrap-4": "^5.39.2"
     }
 }
