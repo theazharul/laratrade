@@ -19,7 +19,6 @@ class OrderController extends Controller
         }
         $orders = $orders->with(['items', 'payments', 'customer'])->latest()->paginate(10);
 
-
         $total = $orders->map(function ($i) {
             return $i->total();
         })->sum();
@@ -28,6 +27,10 @@ class OrderController extends Controller
             return $i->discount;
         })->sum();
 
+        $receivedAmount = $orders->map(function ($i) {
+            return $i->receivedAmount();
+        })->sum();
+        
         $receivedAmount = $orders->map(function ($i) {
             return $i->receivedAmount();
         })->sum();

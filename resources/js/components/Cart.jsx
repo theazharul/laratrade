@@ -187,7 +187,7 @@ class Cart extends Component {
         Swal.fire({
             title: "Received Amount",
             input: "text",
-            inputValue: this.getTotal(this.state.cart) - ((this.getTotal(this.state.cart) * this.state.discount)/100),
+            inputValue: this.getTotal(this.state.cart) - (this.getTotal(this.state.cart) * this.state.discount * 0.01),
             showCancelButton: true,
             confirmButtonText: "Send",
             showLoaderOnConfirm: true,
@@ -216,7 +216,7 @@ class Cart extends Component {
         });
     }
     render() {
-        const { cart, products, customers, barcode } = this.state;
+        const { cart, products, customers, barcode, discount, } = this.state;
         return (
             <div className="row">
                 <div className="col-md-6 col-lg-4">
@@ -322,7 +322,7 @@ class Cart extends Component {
                     <div className="row">
                         <div className="col">Grand total:</div>
                         <div className="col text-right">
-                             {this.getTotal(cart) - (this.getTotal(cart) * (parseFloat(this.state.discount)/100))} {window.APP.currency_symbol}
+                             {this.getTotal(cart) - (this.getTotal(cart) * this.state.discount * 0.01) } {window.APP.currency_symbol}
                         </div>
                     </div>
                     <div className="row">
