@@ -4,10 +4,12 @@
 @endsection
 @section('content')
 <div class="container">
-<div class="row justify-content-center">
+<div class="row justify-content-md-center">
     				<!-- BEGIN INVOICE -->
-					<div class="col-xs-12">
-						<div class="grid invoice">
+					<div class="col-sm-3"></div>
+					
+					<div class="col-sm-6">
+						<div class="grid invoice  m-auto">
 							<div class="grid-body">
 								<div class="invoice-title">
 									<div class="row">
@@ -98,6 +100,7 @@
 							</div>
 						</div>
 					</div>
+					<div class="col-sm-3"></div>
 					<!-- END INVOICE -->
 				</div>
 </div>
