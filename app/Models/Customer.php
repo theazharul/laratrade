@@ -12,6 +12,7 @@ class Customer extends Model
         'last_name',
         'email',
         'phone',
+        'discount',
         'address',
         'avatar',
         'user_id',
@@ -19,6 +20,6 @@ class Customer extends Model
 
     public function getAvatarUrl()
     {
-        return Storage::url($this->avatar);
+        return Storage::url('app/public/'.$this->avatar);
     }
 }

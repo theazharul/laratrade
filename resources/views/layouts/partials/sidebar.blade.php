@@ -53,6 +53,20 @@
                     </a>
                 </li>
                 <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link {{ activeSegment('reports') }}">
+                        <i class="nav-icon fas fa-registered"></i>
+                        <p>Reports</p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('products.stock') }}" class="nav-link ">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Stock Report</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
                     <a href="{{ route('settings.index') }}" class="nav-link {{ activeSegment('settings') }}">
                         <i class="nav-icon fas fa-cogs"></i>
                         <p>Settings</p>

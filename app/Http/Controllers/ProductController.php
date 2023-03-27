@@ -18,6 +18,8 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
+        $image_path = '';
+        
         $products = new Product();
         if ($request->search) {
             $products = $products->where('name', 'LIKE', "%{$request->search}%");
@@ -34,6 +36,7 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function create()
     {
         return view('products.create');
@@ -49,10 +52,14 @@ class ProductController extends Controller
     {
         $image_path = '';
 
+        // $request->validate([
+        //     'image' => 'required|image|mimes:png,jpg,jpeg|max:2048'
+        // ]);
+
         if ($request->hasFile('image')) {
             $image_path = $request->file('image')->store('products', 'public');
         }
-
+        
         $product = Product::create([
             'name' => $request->name,
             'description' => $request->description,
@@ -78,8 +85,28 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        $productsBarcode= Product::select('barcode');
+	    return view('products.show',compact('productsBarcode','product'));
+        // return view("products.show")->with('product', $product);
     }
+
+    public function stock(){
+        $products = Product::get();
+        // $total = $products->map(function ($i) {
+        //     return $i->total();
+        // })->sum();
+        // dd($total);
+        return view("reports.stockreport")->with('products', $products);
+    }
+
+
+
+    public function barcode()
+	{ 
+        $products = Product::all();
+        $productsBarcode= Product::select('barcode');
+	    return view('products.barcode',compact('productsBarcode','products'));
+	}
 
     /**
      * Show the form for editing the specified resource.
@@ -144,3 +171,6 @@ class ProductController extends Controller
         ]);
     }
 }
+
+
+   

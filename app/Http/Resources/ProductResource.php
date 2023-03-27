@@ -21,12 +21,12 @@ class ProductResource extends JsonResource
             'description' => $this->description,
             'image' => $this->image,
             'barcode' => $this->barcode,
-            'purchase_price' => $this->price,
-            'selling_price' => $this->price,
+            'purchase_price' => $this->purchase_price,
+            'selling_price' => $this->selling_price,
             'quantity' => $this->quantity,
             'status' => $this->status,
             'created_at' => $this->created_at,
-            'image_url' => Storage::url($this->image)
+            'image_url' => Storage::url('app/public/'.$this->image)
         ];
     }
 }

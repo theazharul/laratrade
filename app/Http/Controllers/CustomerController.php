@@ -55,6 +55,7 @@ class CustomerController extends Controller
             'last_name' => $request->last_name,
             'email' => $request->email,
             'phone' => $request->phone,
+            'discount' => $request->discount,
             'address' => $request->address,
             'avatar' => $avatar_path,
             'user_id' => $request->user()->id,
@@ -100,6 +101,7 @@ class CustomerController extends Controller
         $customer->last_name = $request->last_name;
         $customer->email = $request->email;
         $customer->phone = $request->phone;
+        $customer->discount = $request->discount;
         $customer->address = $request->address;
 
         if ($request->hasFile('avatar')) {

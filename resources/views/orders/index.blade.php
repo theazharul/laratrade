@@ -33,32 +33,37 @@
                     <th>ID</th>
                     <th>Customer Name</th>
                     <th>Total</th>
+                    <th>Discount</th>
                     <th>Received Amount</th>
                     <th>Status</th>
                     <th>To Pay</th>
                     <th>Created At</th>
+                    <th>Created By</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($orders as $order)
                 <tr>
-                    <td>{{$order->id}}</td>
+                    <td>
+                        <a href="{{ route('orders.show', $order) }}" class="btn btn-primary">{{$order->id}}</a></td>
                     <td>{{$order->getCustomerName()}}</td>
-                    <td>{{ config('settings.currency_symbol') }} {{$order->formattedTotal()}}</td>
-                    <td>{{ config('settings.currency_symbol') }} {{$order->formattedReceivedAmount()}}</td>
+                    <td>{{$order->formattedTotal()}}{{ config('settings.currency_symbol') }} </td>
+                    <td> {{$order->discount}} %</td>
+                    <td> {{$order->formattedReceivedAmount()}} {{ config('settings.currency_symbol') }}</td>
                     <td>
                         @if($order->receivedAmount() == 0)
                             <span class="badge badge-danger">Not Paid</span>
-                        @elseif($order->receivedAmount() < $order->total())
+                        @elseif($order->receivedAmount() < $order->total() - $order->discount)
                             <span class="badge badge-warning">Partial</span>
-                        @elseif($order->receivedAmount() == $order->total())
+                        @elseif($order->receivedAmount() == $order->total() - $order->discount)
                             <span class="badge badge-success">Paid</span>
-                        @elseif($order->receivedAmount() > $order->total())
+                        @elseif($order->receivedAmount() > $order->total() - $order->discount)
                             <span class="badge badge-info">Change</span>
                         @endif
                     </td>
-                    <td>{{config('settings.currency_symbol')}} {{number_format($order->total() - $order->receivedAmount(), 2)}}</td>
+                    <td> {{number_format($order->total() - $order->receivedAmount() - $order->discount, 2)}} {{config('settings.currency_symbol')}}</td>
                     <td>{{$order->created_at}}</td>
+                    <td>{{$order->created_by}}</td>
                 </tr>
                 @endforeach
             </tbody>
@@ -66,8 +71,11 @@
                 <tr>
                     <th></th>
                     <th></th>
-                    <th>{{ config('settings.currency_symbol') }} {{ number_format($total, 2) }}</th>
-                    <th>{{ config('settings.currency_symbol') }} {{ number_format($receivedAmount, 2) }}</th>
+                    <th>{{ number_format($total, 2) }} {{ config('settings.currency_symbol') }} </th>
+                    <th> 
+                        <!-- {{ number_format($totalDiscount, 2) }} {{ config('settings.currency_symbol') }} -->
+                    </th>
+                    <th> {{ number_format($receivedAmount, 2) }} {{ config('settings.currency_symbol') }}</th>
                     <th></th>
                     <th></th>
                     <th></th>

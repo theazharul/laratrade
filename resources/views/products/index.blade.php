@@ -32,8 +32,11 @@
                 <tr>
                     <td>{{$product->id}}</td>
                     <td>{{$product->name}}</td>
-                    <td><img class="product-img" src="{{ Storage::url($product->image) }}" alt=""></td>
-                    <td>{{$product->barcode}}</td>
+                    <td><img class="product-img" src="{{ Storage::url('app/products'.$product->image_url) }}" alt=""></td>
+                    <td>
+                    <a href="{{ route('products.show', $product) }}">    
+                        {{$product->barcode}}
+</a></td>
                     <td>{{$product->purchase_price}}</td>
                     <td>{{$product->selling_price}}</td>
                     <td>{{$product->quantity}}</td>

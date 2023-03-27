@@ -13,10 +13,16 @@
 ***** Release MVP
 **** Sprint Backlog [0/3]
 ***** TODO Generate invoice pdf and print
-***** TODO Total discount in order
 ***** TODO Client computer Setup script
 **** In-progress
 **** Increment
+***** DONE Total discount in order [100%] [6/6]
+****** DONE create migration to add discount in orders table
+****** DONE Show dicount input field in cart page
+****** DONE Calculate grand total
+****** DONE insert discount in orders table
+****** DONE Show grand total in order list
+****** DONE Show discount in order list
 ***** DONE Add "purchase_price" and "selling_price"  in product table [100%] [4/4]
 ****** DONE create a migration and add two field in product table
 ****** DONE insert and update pruchase_price and selling_price

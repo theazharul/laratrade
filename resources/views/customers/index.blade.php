@@ -20,6 +20,7 @@
                     <th>Last Name</th>
                     <th>Email</th>
                     <th>Phone</th>
+                    <th>Discount</th>
                     <th>Address</th>
                     <th>Created At</th>
                     <th>Actions</th>
@@ -30,12 +31,13 @@
                     <tr>
                         <td>{{$customer->id}}</td>
                         <td>
-                            <img width="50" src="{{$customer->getAvatarUrl()}}" alt="">
+                         <img  src="{{route('home')}}{{$customer->getAvatarUrl()}}" alt="">
                         </td>
                         <td>{{$customer->first_name}}</td>
                         <td>{{$customer->last_name}}</td>
                         <td>{{$customer->email}}</td>
                         <td>{{$customer->phone}}</td>
+                        <td>{{$customer->discount}}</td>
                         <td>{{$customer->address}}</td>
                         <td>{{$customer->created_at}}</td>
                         <td>
