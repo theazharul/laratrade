@@ -9,9 +9,10 @@
 
 @section('content')
 
+<div class="container">
 <div class="row">
         @foreach($products as $product)
-        <div class="col-lg-3">
+        <div class="col-md-3">
             <div class="card">
                 <div class="card-body">
                 <a href="{{ route('products.show', $product) }}">
@@ -21,6 +22,7 @@
             </div>
         </div>
         @endforeach
+    </div>
     </div>
         
 
