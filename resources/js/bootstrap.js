@@ -14,21 +14,21 @@ import Popper from 'popper.js';
 window.Popper = Popper;
 
 import jQuery from 'jquery';
-window.$ = window.jQuery = jQuery;
+window.$ = window.$ = jQuery;
 
-import DataTable from 'datatables.net-bs4';
-DataTable(window, window.$);
+// import DataTable from 'datatables.net-bs4';
+// DataTable(window, window.jQuery);
 
 import 'bootstrap';
 import 'admin-lte';
 
-window.SwalWithBootstrap = Swal.mixin({
-  customClass: {
-    confirmButton: 'btn btn-primary mx-3',
-    cancelButton: 'btn btn-danger mx-3',
-  },
-  buttonsStyling: false,
-});
+// window.SwalWithBootstrap = Swal.mixin({
+//   customClass: {
+//     confirmButton: 'btn btn-primary mx-3',
+//     cancelButton: 'btn btn-danger mx-3',
+//   },
+//   buttonsStyling: false,
+// });
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
