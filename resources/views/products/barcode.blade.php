@@ -10,16 +10,12 @@
 @section('content')
 
 <div class="container">
-<div class="row">
+<div class="row row-cols-3">
         @foreach($products as $product)
-        <div class="col-md-3">
-            <div class="card">
-                <div class="card-body">
+        <div class="col">
                 <a href="{{ route('products.show', $product) }}">
                     {!! DNS1D::getBarcodeSVG($product->barcode, 'C39'); !!}
                 </a>
-                </div>
-            </div>
         </div>
         @endforeach
     </div>

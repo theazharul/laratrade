@@ -26,6 +26,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('orders', OrderController::class);
 
     Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+    // Route::post('/orderreturn', [CartController::class, 'return'])->name('return.return');
     Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
     Route::post('/cart/change-qty', [CartController::class, 'changeQty']);
     Route::delete('/cart/delete', [CartController::class, 'delete']);

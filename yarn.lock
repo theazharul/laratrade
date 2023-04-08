@@ -385,6 +385,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@popperjs/core@^2.11.7":
+  version "2.11.7"
+  resolved "https://registry.npmjs.org/@popperjs/core/-/core-2.11.7.tgz"
+  integrity sha512-Cr4OjIkipTtcXKjAsm8agyleBuDHvxzeBoa1v543lbv1YaIwQjESsVcmjiWiPEbC1FIeHOG/Op9kdCmAmiS3Kw==
+
 "@sweetalert2/theme-bootstrap-4@^5.0.8":
   version "5.0.15"
   resolved "https://registry.npmjs.org/@sweetalert2/theme-bootstrap-4/-/theme-bootstrap-4-5.0.15.tgz"
@@ -853,7 +858,7 @@ datatables.net-autofill@>=2.4.0:
     datatables.net ">=1.12.1"
     jquery ">=1.7"
 
-datatables.net-bs4@^1.11.4, datatables.net-bs4@>=1.10.25, datatables.net-bs4@>=1.12.1:
+datatables.net-bs4@^1.11.4, datatables.net-bs4@^1.13.4, datatables.net-bs4@>=1.10.25, datatables.net-bs4@>=1.12.1:
   version "1.13.4"
   resolved "https://registry.npmjs.org/datatables.net-bs4/-/datatables.net-bs4-1.13.4.tgz"
   integrity sha512-xRImAzF0Ra+JYc1oUeZtFv/XzUATk3CUyVSIDr2OYh0FwSTEU48S94bUBiTUJFvzwPFreqcTZb0IyMFWQvI1GA==
@@ -1069,6 +1074,13 @@ datatables.net@^1.11.4, datatables.net@>=1.12.1:
   version "1.13.4"
   resolved "https://registry.npmjs.org/datatables.net/-/datatables.net-1.13.4.tgz"
   integrity sha512-yzhArTOB6tPO2QFKm1z3hA4vabtt2hRvgw8XLsT1xqEirinfGYqWDiWXlkTPTaJv2e7gG+Kf985sXkzBFlGrGQ==
+  dependencies:
+    jquery ">=1.7"
+
+datatables@^1.10.18:
+  version "1.10.18"
+  resolved "https://registry.npmjs.org/datatables/-/datatables-1.10.18.tgz"
+  integrity sha512-ntatMgS9NN6UMpwbmO+QkYJuKlVeMA2Mi0Gu/QxyIh+dW7ZjLSDhPT2tWlzjpIWEkDYgieDzS9Nu7bdQCW0sbQ==
   dependencies:
     jquery ">=1.7"
 
@@ -1756,7 +1768,7 @@ loader-utils@^2.0.0:
     emojis-list "^3.0.0"
     json5 "^2.1.2"
 
-lodash@^4.17.13:
+lodash@^4.17.21:
   version "4.17.21"
   resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -2330,9 +2342,9 @@ supports-preserve-symlinks-flag@^1.0.0:
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
 sweetalert2@^11.4.0, sweetalert2@^11.4.8:
-  version "11.7.3"
-  resolved "https://registry.npmjs.org/sweetalert2/-/sweetalert2-11.7.3.tgz"
-  integrity sha512-fUN/fyVSBZNtY4Rr/Qtxn7tNNnlRAbUhQxTQ9uOo0xVMIHBmqq4/9pau5N9dB2pvkB353XL/ywRAycscLoYU3w==
+  version "11.4.8"
+  resolved "https://registry.npmjs.org/sweetalert2/-/sweetalert2-11.4.8.tgz"
+  integrity sha512-BDS/+E8RwaekGSxCPUbPnsRAyQ439gtXkTF/s98vY2l9DaVEOMjGj1FaQSorfGREKsbbxGSP7UXboibL5vgTMA==
 
 tailwindcss@^3.2.7:
   version "3.2.7"
