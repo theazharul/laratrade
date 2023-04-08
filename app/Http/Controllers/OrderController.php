@@ -64,9 +64,12 @@ class OrderController extends Controller
         return $order->id;
     }
 
-
     public function show(Order $order)
     {
         return view("orders.show")->with('order', $order);
+    }
+
+    public function return(Order $return){
+        return view('return')->with('return',$return);
     }
 }
